@@ -1,0 +1,103 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="movie.dto.SearchHistory"%>
+<%@page import="movie.dto.User"%>
+<%@page import="movie.dto.Movie"%>
+<%@page import="java.util.List"%>
+<%@page import="javax.persistence.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Search</title>
+<link rel="stylesheet" href="Css.css">
+</head>
+<body>
+<div>
+	<%
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("Movie");
+		EntityManager em=emf.createEntityManager();
+		EntityTransaction et=em.getTransaction();
+		
+		User user=(User)session.getAttribute("user");
+		Query qu=em.createQuery("select a from Movie a");
+		List<Movie> movie=qu.getResultList();
+		
+	%>
+	
+	<div class="search">
+		<h1>Welcome, <%=user.getName() %></h1>
+		<form action="Search.jsp" method="get">
+		<h2>Genre:</h2>
+		<select>
+		<%for(Movie m: movie){ %>
+    		<option><li><a href="UserInterface.jsp?Id=<%=m.getGenre()%>"><%=m.getGenre()%></a></li></option>
+    	<%} %>
+		</select>
+		
+			<input type="text" name="Mname" placeholder="Name of Movie">
+			<input type="submit" value="Search" class="sub">
+		</form>
+		</div>
+	</div>
+	<%
+		String Genre=request.getParameter("Genre");
+		if(Genre!=null){
+			Query qu1=em.createQuery("select a from Movie a where a.Genre=?1");
+			qu1.setParameter(1, Genre);
+			List<Movie> GenreMovie=qu1.getResultList();
+			
+			if(GenreMovie.size()>0){
+				for(Movie m:GenreMovie){
+					%>
+				<div class="div-1 box">
+					<h1><%=m.getMovieName() %></h1>
+					<p><%=m.getDateOfLaunch() %></p>
+					<p><%=m.getQuality() %></p>
+					<p><a href="Rate.jsp?Id=<%=m.getId()%>">Give a rating</a></p>
+				</div>
+					<% 
+				}
+			}
+		}
+		
+		String MName=request.getParameter("Mname");
+		if(MName!=null){
+			Query qu3=em.createNativeQuery("select a from Movie a where a.MovieName=?1");
+			qu3.setParameter(1, MName);
+			List<Movie> SearchMovie=qu3.getResultList();
+			
+			//Adding Search History 
+			SearchHistory shistory=new SearchHistory(MName,user);
+			List<SearchHistory> sh=user.getSh();
+			if(sh.size()>0){
+				sh.add(shistory);
+			}
+			else{
+				sh=new ArrayList<SearchHistory>();
+				sh.add(shistory);
+			}
+			user.setSh(sh);
+			
+			if(SearchMovie.size()>0){
+				for(Movie m:SearchMovie){
+					%>
+				<div class="div-1 box">
+					<h1><%=m.getMovieName() %></h1>
+					<p><%=m.getDateOfLaunch() %></p>
+					<p><%=m.getQuality() %></p>
+					<p><a href="Rate.jsp?Id=<%=m.getId()%>">Give a rating</a></p>
+				</div>
+					<%
+				}
+			}
+			else{
+				%>
+			<h2>No Movies Found</h2>
+				<%
+			}
+		}
+	%>
+</body>
+</html>

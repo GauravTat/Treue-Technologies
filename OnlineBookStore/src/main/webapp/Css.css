@@ -1,0 +1,195 @@
+html body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(205, 187, 187);
+}
+.div-1{
+    background-color:  rgb(136, 100, 147);
+    width: 400px;
+    height: 400px;
+    margin-left: 20px;
+}
+.div-1 input{
+    height: 20px;
+    width: 80%;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.div-1 h1{
+    color: antiquewhite;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.div-1 input.sub{
+    height: 30px;
+    width: 50%;
+}
+.div-1 p{
+    color: antiquewhite;
+    margin-left: 25px;
+}
+.div-1 p a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+.div-1 p a:hover{
+    color: rgb(100, 161, 100);
+}
+
+/* Index Page */
+.div-3{
+    background-color: rgb(156, 103, 173);
+    height: 200px; 
+    width: 40%;
+    padding-top: 10px;
+}
+.div-3 p,.div-3 a{
+    background-color: rgb(117, 73, 168);
+    width: 200px;
+    height: 30px;
+    color: antiquewhite;
+    padding-left: 20px;
+    margin-left: 24px;
+    padding-top: 10px;
+    border-radius: 9px;
+    text-decoration: none;
+}
+.div-3 a:hover{
+    color: rgb(206, 203, 230);
+}
+div .div-para{
+    margin-left: 40px;
+    width: 400px;
+}
+
+/* Login Form */
+.Login-div{
+    background-color: rgb(136, 100, 147);
+    height: 250px;
+}
+.login a{
+    width: 200px;
+    height: 20px;
+}
+.login a:hover{
+    color: rgb(206, 203, 230);
+}
+
+/* Rating Page */
+.rate{
+    background-color: rgb(136, 100, 147);
+    width: 300px;
+    height: 400px;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+.rate p,span{
+    text-decoration: none;
+    color: antiquewhite;
+    margin-left: 4px;
+}
+.rate input.review{
+    height: 50px;
+    width: 80%;
+    border: none;
+}
+.rate input.sub{
+    margin-top: 10px;
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Search Session */
+.Search-2{
+    background-color: rgb(120, 93, 129);
+    height: 220px;
+    width: 100%;
+    color: antiquewhite;
+    position: fixed;
+    margin: 0px;
+}
+.Search-2 nav a{
+    text-decoration: none;
+    color: black;
+}
+.Search-2 nav p{
+    background-color: rgb(244, 248, 248);
+    width: 150px;
+    height: 25px;
+    padding-left: 30px;
+    padding-top: 10px;
+    display: inline-flex;
+    margin-left: 20px;
+    border-radius: 9px;
+}
+.Search-2 nav p a:hover{
+    color: green;
+}
+.Search-2 form{
+    margin-top: 60px;
+    margin-left: 20px;
+}
+.Search-2 form input{
+    height: 30px;
+}
+
+.contain{
+    margin-top: 230px;
+    display: inline-block;
+    margin-left: 10px;
+    height: 350px;
+    width: 450px;
+    padding-left: 15px;
+    color: antiquewhite;
+    margin-right: 15px;
+    background-color: rgb(136, 100, 147)
+}
+.contain a{
+    color: black;
+    text-decoration: none;
+}
+.contain a:hover{
+    color: green;
+}
+.contain p a{
+    background-color: rgb(244, 248, 248);
+    width: 150px;
+    height: 25px;
+    padding-left: 30px;
+    padding-top: 10px;
+    display: inline-flex;
+    margin-left: 20px;
+    border-radius: 9px;
+}
+/* Cart */
+table{
+    background-color: rgb(136, 100, 147);
+    border-radius: 9px;
+    margin-left: 10px;
+    color: antiquewhite;
+}
+table a{
+    text-decoration: none;
+    color: black;
+}
+table a:hover{
+    color: green;
+}
+table p{
+    background-color: rgb(232, 234, 234);
+    height: 25px;
+    width: 75px;
+    padding-left: 12px;
+    border: none;
+    border-radius: 8px;
+    padding-top: 8px;
+}
+.table-h2,.table-h2 a{
+    text-decoration: none;
+    color:rgb(85, 18, 105);
+}
+.table-h2 a:hover{
+    color: antiquewhite;
+}

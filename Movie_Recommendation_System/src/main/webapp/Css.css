@@ -1,0 +1,135 @@
+html body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(212, 155, 155);
+}
+.div-1{
+    background-color: rgb(123, 97, 131);
+    width: 400px;
+    height: 500px;
+    margin-left: 20px;
+}
+.div-1 input{
+    height: 20px;
+    width: 80%;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.div-1 h1{
+    color: antiquewhite;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.div-1 input.sub{
+    height: 30px;
+    width: 50%;
+}
+.div-1 p{
+    color: antiquewhite;
+    margin-left: 25px;
+}
+.div-1 p a{
+    text-decoration: none;
+}
+
+/* Index Page */
+.div-2{
+    height: 200px;
+    background-color: rgb(85, 18, 105);
+    margin-left: 25px;
+    margin-top: 20px;
+    width: 200px;
+    padding-top: 20px;
+}
+.div-2 a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+.div-2 p{
+    background-color: rgb(213, 98, 106);
+    height: 30px;
+    width: 80%;
+    margin-left: 5px;
+    margin-top: 25px;
+    border-radius: 20px;
+    padding-left: 25px;
+    padding-top: 15px;
+}
+/* Login Form */
+.Login-div{
+    background-color: rgb(85, 18, 105);
+    height: 250px;
+}
+
+/* Search Session */
+.search{
+    height: 200px;
+    width: 100%;
+    background-color: rgb(76, 67, 79);
+    position: fixed;
+    margin: 0px;
+}
+.search select{
+    margin-left: 10px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+.search lable{
+    margin-left:20px ;
+}
+.search input{
+    margin-left: 20px;
+    height: 30px;
+    width: 400px;
+}
+.search input.sub{
+    width: 150px;
+}
+.search h1,h2,a{
+    color: antiquewhite;
+    margin-left: 25px;
+}
+.box{
+    margin-top: 210px;
+    display: inline-block;
+    margin-left: 10px;
+    height: 250px;
+    margin-right: 10px;
+}
+.box a:hover{
+    color: rgb(1, 84, 1);
+    box-shadow: 10px 10px 30px rgb(239, 245, 245);
+}
+.box a{
+    color: black;
+}
+.box p.anchor{
+    padding-top: 10px;
+    height: 30px;
+    width: 160px;
+    border-radius: 8px;
+    background-color: rgb(239, 245, 245);
+}
+/* Rating Page */
+.rate{
+    background-color: rgb(85, 18, 105);
+    width: 300px;
+    height: 400px;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+.rate p,span{
+    text-decoration: none;
+    color: antiquewhite;
+    margin-left: 4px;
+}
+.rate input.review{
+    height: 50px;
+    width: 80%;
+    border: none;
+}
+.rate input.sub{
+    margin-top: 10px;
+    width: 80px;
+    height: 30px;
+}

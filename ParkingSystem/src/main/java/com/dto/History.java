@@ -1,0 +1,95 @@
+package com.dto;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class History {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	private String CarNo;
+	private double price;
+	private String Area;
+	private String Address;
+	
+	@ManyToOne
+	ParkingOwner po;
+	
+	@ManyToOne
+	User user;
+
+	public History() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public History(String carNo,double price,String Area,String Address) {
+		super();
+		CarNo = carNo;
+		this.price=price;
+		this.Area=Area;
+		this.Address=Address;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getCarNo() {
+		return CarNo;
+	}
+
+	public void setCarNo(String carNo) {
+		CarNo = carNo;
+	}
+
+	public ParkingOwner getPo() {
+		return po;
+	}
+
+	public void setPo(ParkingOwner po) {
+		this.po = po;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public String getArea() {
+		return Area;
+	}
+
+	public void setArea(String area) {
+		Area = area;
+	}
+
+	public String getAddress() {
+		return Address;
+	}
+
+	public void setAddress(String address) {
+		Address = address;
+	}
+	
+	
+}

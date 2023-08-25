@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create</title>
+<link rel="stylesheet" href="Css.css">
+</head>
+<body>
+	<div class="div-1">
+		<h1>Create Account</h1>
+		<form action="Saveuser" method="post">
+			<input type="text" name="name" placeholder="Name">
+			<input type="email" name="email" placeholder="xyz@gmail.com" autocomplete="off">
+			<input type="number"  name="number" placeholder="0000000000" autocomplete="off">
+			<input type="password" name="pswd" placeholder="********">
+			<input type="submit" value="Create Account" class="sub">
+		</form>
+		<p>Already Have Account:<a href="LoginForm.html">Log in</a></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<%@page import="java.util.List"%>
+<%@page import="com.dto.*"%>
+<%@page import="javax.persistence.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cart</title>
+<link rel="stylesheet" href="Css.css">
+</head>
+<body>
+	<%
+	EntityManagerFactory emf=Persistence.createEntityManagerFactory("Booking");
+	EntityManager em=emf.createEntityManager();
+	
+	Customer customer=(Customer)session.getAttribute("customer");
+	List<Items> item=customer.getItem();
+	
+	int c=0;
+	if(item.size()>0){
+		%>
+	<table cellpadding=0 cellspacing=35 >
+		<tr>
+			<th>Sr No</th>
+			<th>Book Name</th>
+			<th>Publisher Name</th>
+			<th>Writer Name</th>
+			<th>Price</th>
+			<th>Buy Now</th>
+		</tr>
+		<%
+		for(Items i:item){
+		%>
+		<tr>
+			<td><%=++c %></td>
+			<td><%=i.getBname() %></td>
+			<td><%=i.getPublisherName() %></td>
+			<td><%=i.getWriterName() %></td>
+			<td><%=i.getPrice() %></td>
+			<td><p><a href="BookCode.jsp?Id=<%=i.getId()%>&&Bname=<%=i.getBname()%>">Buy now</a></p></td>
+		</tr>
+	</table>
+		<%
+		}
+	}
+	else{
+	%>
+	<h2 class="table-h2">No Book To Show <a href="UserInterface.jsp">buy Now</a></h2>
+	<%} %>
+</body>
+</html>

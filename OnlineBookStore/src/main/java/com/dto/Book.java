@@ -1,0 +1,113 @@
+package com.dto;
+
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+public class Book {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long Id;
+	private String Bname;
+	private String publisherName;
+	private String WriterName;
+	private String Category;
+	private int Stock;
+	private double price;
+	
+	@ManyToOne
+	Shopkeeper shopkeeper;
+	
+	@OneToMany
+	List<RateReview> rate;
+	
+	
+
+	public Book(String bname, String publisherName, String category, int stock, double price,String WriterName) {
+		this.Bname = bname;
+		this.publisherName = publisherName;
+		this.Category = category;
+		this.Stock = stock;
+		this.price = price;
+		this.WriterName=WriterName;
+	}
+
+	public Book() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public long getId() {
+		return Id;
+	}
+
+	public void setId(long id) {
+		Id = id;
+	}
+
+	public String getBname() {
+		return Bname;
+	}
+
+	public void setBname(String bname) {
+		Bname = bname;
+	}
+
+	public String getPublisherName() {
+		return publisherName;
+	}
+
+	public void setPublisherName(String publisherName) {
+		this.publisherName = publisherName;
+	}
+
+	public String getCategory() {
+		return Category;
+	}
+
+	public void setCategory(String category) {
+		Category = category;
+	}
+
+	public int getStock() {
+		return Stock;
+	}
+
+	public void setStock(int stock) {
+		Stock = stock;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public Shopkeeper getShopkeeper() {
+		return shopkeeper;
+	}
+
+	public void setShopkeeper(Shopkeeper shopkeeper) {
+		this.shopkeeper = shopkeeper;
+	}
+
+	public String getWriterName() {
+		return WriterName;
+	}
+
+	public void setWriterName(String writerName) {
+		WriterName = writerName;
+	}
+
+	public List<RateReview> getRate() {
+		return rate;
+	}
+
+	public void setRate(List<RateReview> rate) {
+		this.rate = rate;
+	}
+
+}

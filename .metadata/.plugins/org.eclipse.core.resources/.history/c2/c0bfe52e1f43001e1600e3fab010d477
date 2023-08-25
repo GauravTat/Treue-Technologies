@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create Account</title>
+<link rel="stylesheet" href="Css.css">
+</head>
+<body>
+	<div class="div-1">
+		<h1>Create Account</h1>
+		
+		<form action="User" method="post">
+			<input type="text" name="name" placeholder="xyz" required>
+			<input type="email" name="email" placeholder="xyz@gmail.com" required>
+			<input type="number" name="number" min=10 max=10 placeholder="0000000000" required>
+			<input type="password" name="pass" placeholder="*******" required>
+			<input type="submit" class="sub">
+		</form>
+		
+		<p>Already have Account:<a href="LoginForm.html">Login</a></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+html body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(205, 187, 187);
+}
+.div-1{
+    background-color: rgb(85, 18, 105);
+    width: 400px;
+    height: 400px;
+    margin-left: 20px;
+}
+.div-1 input{
+    height: 20px;
+    width: 80%;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.div-1 h1{
+    color: antiquewhite;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.div-1 input.sub{
+    height: 30px;
+    width: 50%;
+}
+.div-1 p{
+    color: antiquewhite;
+    margin-left: 25px;
+}
+.div-1 p a{
+    text-decoration: none;
+}
+
+/* Index Page */
+.div-3{
+    background-color: rgb(85, 18, 105);
+    height: 200px; 
+    width: 40%;
+}
+.div-3 p,a{
+    background-color: rgb(117, 73, 168);
+    width: 200px;
+    height: 30px;
+    color: antiquewhite;
+    padding-left: 20px;
+    margin-left: 200px;
+    padding-top: 10px;
+    border-radius: 9px;
+    text-decoration: none;
+}
+.div-3 a:hover{
+    color: rgb(206, 203, 230);
+}
+div .div-para{
+    margin-left: 40px;
+    width: 400px;
+}
+
+/* Login Form */
+.Login-div{
+    background-color: rgb(85, 18, 105);
+    height: 250px;
+}
+.login a{
+    width: 200px;
+    padding-left: 0px;
+    padding-top: 0px;
+    height: 20px;
+}
+.login a:hover{
+    color: rgb(206, 203, 230);
+}
+
+/* Rating Page */
+.rate{
+    background-color: rgb(85, 18, 105);
+    width: 300px;
+    height: 400px;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+.rate p,span{
+    text-decoration: none;
+    color: antiquewhite;
+    margin-left: 4px;
+}
+.rate input.review{
+    height: 50px;
+    width: 80%;
+    border: none;
+}
+.rate input.sub{
+    margin-top: 10px;
+    width: 80px;
+    height: 30px;
+}
+
+/* Search Session */
+.Search-2{
+    background-color: rgb(85, 18, 105);
+    height: 180px;
+    width: 100%;
+    color: antiquewhite;
+}
+.Search-2 nav li{
+    height: 50px;
+    background-color: none;
+    height: 40px;
+    padding-top: 20px;
+}
+/* Cart */
+table{
+    background-color: rgb(85, 18, 105);
+    border-radius: 9px;
+    margin-left: 10px;
+    color: antiquewhite;
+}
+table a{
+    text-decoration: none;
+}
+.table-h2,.table-h2 a{
+    text-decoration: none;
+    color:rgb(85, 18, 105);
+}
+.table-h2 a:hover{
+    color: antiquewhite;
+}

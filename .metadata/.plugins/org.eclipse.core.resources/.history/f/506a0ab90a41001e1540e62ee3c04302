@@ -1,0 +1,115 @@
+package com.Controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.dto.Book;
+import com.dto.RateReview;
+
+@WebServlet("/Review")
+public class ReviewRate extends HttpServlet{
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("Booking");
+		EntityManager em=emf.createEntityManager();
+		EntityTransaction et=em.getTransaction();
+		
+		int Like=Integer.parseInt(req.getParameter("like"));
+		int Quality=Integer.parseInt(req.getParameter("quality"));
+		int Over=Integer.parseInt(req.getParameter("overall"));
+		String Feedback=req.getParameter("review");
+		long id=Integer.parseInt(req.getParameter("id"));
+		
+		RateReview rate=new RateReview();
+		rate.setReview(Feedback);
+		
+		switch(Like) {
+		case 0:
+			rate.setLike();
+			break;
+		case 1:
+			rate.setLike();
+			break;
+		case 2:
+			rate.setLike();
+			break;
+		case 3:
+			rate.setLike();
+			break;
+		case 4:
+			rate.setLike();
+			break;
+		case 5:
+			rate.setLike();
+			break;
+		}
+		
+		switch(Quality) {
+		case 0:
+			rate.setQuality();
+			break;
+		case 1:
+			rate.setQuality();
+			break;
+		case 2:
+			rate.setQuality();
+			break;
+		case 3:
+			rate.setQuality();
+			break;
+		case 4:
+			rate.setQuality();
+			break;
+		case 5:
+			rate.setQuality();
+			break;
+		}
+		
+		switch(Over) {
+		case 0:
+			rate.setOverall(Over);
+			break;
+		case 1:
+			rate.setOverall(Over);
+			break;
+		case 2:
+			rate.setOverall(Over);
+			break;
+		case 3:
+			rate.setOverall(Over);
+			break;
+		case 4:
+			rate.setOverall(Over);
+			break;
+		case 5:
+			rate.setOverall(Over);
+			break;
+		}
+		
+		Book b=em.find(Book.class, id);
+		List<RateReview> r=b.getRate();
+		if(r.size()>0) {
+			r.add(rate);
+		}
+		else {
+			r=new ArrayList<RateReview>();
+			r.add(rate);
+		}
+		
+		rate.setBook(b);
+		
+		et.begin();
+		em.persist(rate);
+		em.merge(b);
+		et.commit();
+		
+	}
+}

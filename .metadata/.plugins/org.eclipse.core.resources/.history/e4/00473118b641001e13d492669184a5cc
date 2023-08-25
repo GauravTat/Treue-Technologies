@@ -1,0 +1,94 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="movie.dto.SearchHistory"%>
+<%@page import="movie.dto.User"%>
+<%@page import="movie.dto.Movie"%>
+<%@page import="java.util.List"%>
+<%@page import="javax.persistence.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Search</title>
+<link rel="stylesheet" href="Css.css">
+</head>
+<body>
+<div>
+	<%
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("Movie");
+		EntityManager em=emf.createEntityManager();
+		EntityTransaction et=em.getTransaction();
+		
+		User user=(User)session.getAttribute("user");
+		Query qu=em.createQuery("select a from Movie a");
+		List<Movie> movie=qu.getResultList();
+		
+	%>
+	
+	<div class="search">
+		<h1>Welcome, <%=user.getName() %></h1>
+		<form action="Search.jsp" method="get">
+		<h2>Genre:</h2>
+		<select>
+		<%for(Movie m: movie){ %>
+    		<option><li><a href="UserInterface.jsp?Id=<%=m.getGenre()%>"><%=m.getGenre()%></a></li></option>
+    	<%} %>
+		</select>
+		
+			<input type="text" name="Mname" placeholder="Name of Movie">
+			<input type="submit" value="Search" class="sub">
+		</form>
+		</div>
+	</div>
+	<%
+		String search=request.getParameter("Mname");
+		Query qu1=em.createQuery("select a from Movie a where a.MovieName=?1");
+		qu1.setParameter(1,search);
+		List<Movie> movie1=qu.getResultList();
+		
+		SearchHistory sh=new SearchHistory();
+		sh.setSearch(search);
+		sh.setUser(user);
+		
+		List<SearchHistory> s=user.getSh();
+		if(s.size()>0){
+			s.add(sh);
+		}
+		else{
+			s=new ArrayList<SearchHistory>();
+			s.add(sh);
+		}
+		user.setSh(s);
+		
+		if(movie1.size()>0){
+			for(Movie m:movie1){
+				%>
+		<div class="div-1 box">
+				<h1><%=m.getMovieName() %></h1>
+				<p><%=m.getDateOfLaunch() %></p>
+				<p><%=m.getQuality() %></p>
+				<p><a href="Rate.jsp?Id="<%=m.getId()%>">Give a rating</a></p>
+				<%
+			}
+		}
+		else{
+			%>
+			<h2>No Movie Found</h2>
+		</div>
+		}
+	}
+	else{
+		%>
+		<h2>No Movie Found</h2>
+	</div>
+			<%
+		}
+		
+		et.begin();
+		em.persist(user);
+		em.persist(sh);
+		et.commit();
+	%>
+</body>
+</html>

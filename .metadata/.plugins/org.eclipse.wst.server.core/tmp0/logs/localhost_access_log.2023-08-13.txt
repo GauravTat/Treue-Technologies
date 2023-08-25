@@ -1,0 +1,10 @@
+127.0.0.1 - - [13/Aug/2023:23:22:26 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [13/Aug/2023:23:24:57 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [13/Aug/2023:23:25:15 +0530] "GET /ParkingSystem/Index.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Aug/2023:23:25:33 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [13/Aug/2023:23:25:37 +0530] "GET /ParkingSystem/LoginForm.jsp HTTP/1.1" 200 553
+0:0:0:0:0:0:0:1 - - [13/Aug/2023:23:26:54 +0530] "GET /ParkingSystem/Login?email=gau%40gmail.com&pswd=123 HTTP/1.1" 500 6041
+0:0:0:0:0:0:0:1 - - [13/Aug/2023:23:29:12 +0530] "GET /ParkingSystem/Login?email=gau%40gmail.com&pswd=123 HTTP/1.1" 500 5328
+0:0:0:0:0:0:0:1 - - [13/Aug/2023:23:30:09 +0530] "GET /ParkingSystem/Login?email=gau%40gmail.com&pswd=123 HTTP/1.1" 200 599
+0:0:0:0:0:0:0:1 - - [13/Aug/2023:23:30:37 +0530] "GET /ParkingSystem/CreateAccUser.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Aug/2023:23:30:45 +0530] "POST /ParkingSystem/User HTTP/1.1" 500 1407

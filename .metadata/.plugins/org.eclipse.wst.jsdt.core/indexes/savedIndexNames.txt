@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+D:\Treue Project\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3052644175.index
+3620784112.index
+3991036631.index
+1225277129.index
+1294312408.index
+3716708043.index
+2802526853.index
+1358802923.index
+4214065911.index

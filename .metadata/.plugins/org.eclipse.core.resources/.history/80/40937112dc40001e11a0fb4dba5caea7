@@ -1,0 +1,81 @@
+package com.dto;
+
+import java.util.List;
+
+import javax.persistence.*;
+import javax.servlet.http.HttpServlet;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Items{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long Id;
+	private String Bname;
+	private String publisherName;
+	private String WriterName;
+	private String Category; 
+	private double price;
+	
+	@ManyToOne
+	Customer cust;
+	
+	public Items(String bname, String publisherName, String writerName, String category, double price) {
+		super();
+		this.Bname = bname;
+		this.publisherName = publisherName;
+		this.WriterName = writerName;
+		this.Category = category;
+		this.price = price;
+	}
+	
+	public Items() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public List<Customer> getCust() {
+		return cust;
+	}
+	public void setCust(List<Customer> cust) {
+		this.cust = cust;
+	}
+	public long getId() {
+		return Id;
+	}
+	public void setId(long id) {
+		Id = id;
+	}
+	public String getBname() {
+		return Bname;
+	}
+	public void setBname(String bname) {
+		Bname = bname;
+	}
+	public String getPublisherName() {
+		return publisherName;
+	}
+	public void setPublisherName(String publisherName) {
+		this.publisherName = publisherName;
+	}
+	public String getWriterName() {
+		return WriterName;
+	}
+	public void setWriterName(String writerName) {
+		WriterName = writerName;
+	}
+	public String getCategory() {
+		return Category;
+	}
+	public void setCategory(String category) {
+		Category = category;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	
+}
